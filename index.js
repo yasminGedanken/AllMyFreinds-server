@@ -13,11 +13,15 @@ mongoose.connect('mongodb+srv://yasminGedanken:yasming134@humanz.8ebrm.mongodb.n
 
 
 
-//show all users
-app.get('/', async (req, res) => {
+//read all users
+app.get('/read', async (req, res) => {
   try {
-    const users = await UsersModel.find();
-    res.json(users);
+    UsersModel.find({}, (err,result)=>{
+      if(err){
+        res.send(err)
+      }
+      res.send(result)
+    })
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error1');
@@ -49,7 +53,7 @@ app.post('/insert', async (req, res) => {
 
 
   //delete user
-  app.delete('/:id', async (req, res) => {
+  app.delete('/delete/:id', async (req, res) => {
     try {
       const user = await UsersModel.findById(req.params.id);
   
