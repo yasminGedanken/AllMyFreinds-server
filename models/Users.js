@@ -18,7 +18,17 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required:true,
     },
-
+    city: {
+        type: String,
+    },
+     region :{
+         type: String,
+     },
+     country:{
+         type: String,
+     }
+              
+           
 });
 
 
