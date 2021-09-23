@@ -43,7 +43,7 @@ app.get('/read', async (req, res) => {
 //found city, region, country
  async function findCounrty(ip){
    try{
-let response = await Axios.get(`http://ip-api.com/json/109.64.182.218`)
+let response = await Axios.get(`http://ip-api.com/json/${ip}`)
 let data = await response.data;
 const city  = data.city
 const country  = data.country
