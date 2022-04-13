@@ -8,7 +8,7 @@ const UsersModel = require('./models/Users');
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb+srv://yasminGedanken:yasming134@humanz.8ebrm.mongodb.net/humanz?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://yasminGedanken:<password>@humanz.8ebrm.mongodb.net/AllMyFriends?retryWrites=true&w=majority', {
     useNewUrlParser : true,
 })
 
